@@ -1,0 +1,36 @@
+{
+  "name": "gulp-compile-html-tags",
+  "version": "1.0.0",
+  "description": "Gulp plugin for compiling content inside html tags",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp --gulpfile test/test.js"
+  },
+  "keywords": [
+    "gulpplugin",
+    "html tags",
+    "html",
+    "tags"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guichaguri/gulp-compile-html-tags.git"
+  },
+  "author": "Guichaguri",
+  "license": "LGPL-2.0",
+  "dependencies": {
+    "async-regex-replace": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cat": "^0.3.3",
+    "gulp-header": "^1.8.2",
+    "gulp-uglify": "^1.5.3"
+  },
+  "bugs": {
+    "url": "https://github.com/Guichaguri/gulp-compile-html-tags/issues"
+  },
+  "homepage": "https://github.com/Guichaguri/gulp-compile-html-tags#readme"
+}

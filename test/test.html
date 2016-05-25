@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gulp-compile-html</title>
+    <style>
+        body {
+            background: #DDDDDD;
+            color: #333333;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log('The window is now loaded!');
+        };
+    </script>
+</head>
+<body>
+    <div id="text">
+        I'm a div!
+    </div>
+    <div>
+        I'm another div.
+    </div>
+    <div id="another-one"></div>
+    <script>
+        alert('Hello!');
+        setTimeout(function() {
+            document.body.style.background = 'rgb(200, 200, 200);';
+        }, 1000);
+    </script>
+    <style>
+        #text {
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html>
