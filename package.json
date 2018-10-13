@@ -1,6 +1,6 @@
 {
   "name": "gulp-compile-html-tags",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Gulp plugin for compiling content inside html tags",
   "main": "index.js",
   "scripts": {

@@ -1,4 +1,6 @@
 # gulp-compile-html-tags
+[![NPM](https://nodei.co/npm/gulp-compile-html-tags.png?compact=true)](https://nodei.co/npm/gulp-compile-html-tags/)
+
 Gulp plugin for compiling content inside html tags
 
 This plugin let you run gulp plugins with the content of html tags.
@@ -51,7 +53,6 @@ This last example will add a header in `style` and `script` tags
 var gulp = require('gulp');
 var compileHtmlTags = require('gulp-compile-html-tags');
 var header = require('gulp-header');
-var csso = require('gulp-csso');
 
 gulp.task('default', function() {
     return gulp.src('**/*.html')
