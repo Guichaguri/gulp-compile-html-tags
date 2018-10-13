@@ -20,7 +20,7 @@
  USA
 */
 
-const gutil = require('gulp-util');
+const PluginError = require('plugin-error');
 const through = require('through2');
 const asyncRegex = require('async-regex-replace');
 
@@ -47,16 +47,16 @@ function compileHtml(tags, applyPlugins) {
     }
 
     if(!tags || !(tags instanceof Array) || tags.length == 0) {
-        throw new gutil.PluginError(PLUGIN_NAME, 'No tags were specified!');
+        throw new PluginError(PLUGIN_NAME, 'No tags were specified!');
     }
     if(typeof applyPlugins !== 'function') {
-        throw new gutil.PluginError(PLUGIN_NAME, 'No function was specified!');
+        throw new PluginError(PLUGIN_NAME, 'No function was specified!');
     }
 
     return through.obj(function(file, enc, callback) {
 
         if(file.isStream()) {
-            return callback(new gutil.PluginError(PLUGIN_NAME, 'Streams are not supported'));
+            return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported'));
         } else if(file.isNull()) {
             return callback(null, file);
         }
@@ -92,12 +92,12 @@ function compileHtml(tags, applyPlugins) {
                     }
 
                     if(!strm || !strm.pipe) {
-                        return cb(new gutil.PluginError(PLUGIN_NAME, 'Invalid returned value'));
+                        return cb(new PluginError(PLUGIN_NAME, 'Invalid returned value'));
                     }
 
                     strm.pipe(through.obj(function(replacedCode, enc, cb2) {
                         if(replacedCode.isStream()) {
-                            cb(new gutil.PluginError(PLUGIN_NAME, 'Streams are not supported'));
+                            cb(new PluginError(PLUGIN_NAME, 'Streams are not supported'));
                         } else {
                             cb(null, match.replace(code, fileToString(replacedCode)));
                         }
